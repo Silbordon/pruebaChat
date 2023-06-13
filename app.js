@@ -1,0 +1,13 @@
+// const url = "https://dev.rackoot.com/chat/oauth2/callback?code=def502001b070fa65b5e2f513e0e4cdb30bef42e5dbf43454c293b33f6c303d7781ef9ef5d760a2b6227ecfa4316a16327a5effdab217a70ab3b6dd1a9302b78d84da000da40bcebe5f0bbadb6354d1bb90d03979b15223b5ac42ec7d6a33ae193823eca34e320c8d90a75b8c7a402a7708180f5b5ac89d63994f3826c7242e21ed28d83484c2cb33502b76e198845de9380b06c9ad9410ffff7b28e0f52308a2e990ea3396cc47e6c023f23dbcb57ae54676282d8eac049c35a4bfcfaa5c733482cb2e6327347c7f3fffac52ce2a03117b0deef8db95085985cda173b508e695f99fa6508240e170a2a94b7646ebe7007478414afe9cdcdec207fd470a0bb14093bdfe9b8e444c21e1420a740320ababf7301b32d794ee81a73df5d104b0c72d84a39f3d123a7f99f907e0eef18dac15b240c16130ed72b200b280e300257dfe7bb56547aa07bbef23723020547caacfe4d3dee00ca658c4d0558e323bad42cae3391a4652bae34b368588fefe59686ff604ac9a886d67c76522dcf2de49c69568a355fdbb38c627929abe1f83e2baf2b60223fab0f44454c0e450696d4728d88e03ca934803ef1e52c3ccc8bfbb5d9f418879878b69621a09042d2585aa2f633dcc4905b2db1cb1da8"
+const url = window.location.href
+const regex = /code=([^&]+)/;
+const match = regex.exec(url);
+const code = match && match[1];
+
+localStorage.setItem('codeChatBot', code);
+
+const newCode = localStorage.getItem("codeChatBot")
+
+if(newCode){
+    window.location.href="https://dev.rackoot.com"
+}
